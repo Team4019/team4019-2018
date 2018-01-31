@@ -21,7 +21,7 @@ public class Robot extends IterativeRobot {
 
     @Override
     public void disabledPeriodic() { }
-    
+
     @Override
     public void autonomousPeriodic() { }
 
