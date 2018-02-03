@@ -8,9 +8,9 @@ sysProps.xml
 workbench.xmi
 
 # IDE
-*.ipr
-*.iml
-*.iws
+# *.ipr
+# *.iml
+# *.iws
 out/
 tmp/
 .settings/
