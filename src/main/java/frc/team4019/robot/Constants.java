@@ -22,4 +22,20 @@ public class Constants {
 		static final double throttle = 1;
 		static final String dashboard = "DB/String 0";
 	}
+
+	// Climber configuration
+	static abstract class climber {
+		static abstract class left {
+			static final int[] talonID = {5};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static abstract class right {
+			static final int[] talonID = {7};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static final double throttle = 1;
+		static final String dashboard = "DB/String 1";
+	}
 }
