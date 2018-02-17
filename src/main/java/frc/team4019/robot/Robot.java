@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
     @Override
     public void teleopPeriodic() {
     	if (!stickDrive.getRawButton(1)) {
-		    this.drive.arcadeDrive(-stickDrive.getY(), stickDrive.getX(), stickDrive.getThrottle() / -2 + 1);
+		    this.drive.arcadeDrive(-stickDrive.getY(), stickDrive.getX(), stickDrive.getThrottle() / -2 + 0.5);
 		    this.climber.climb(0);
 	    } else {
     		this.drive.arcadeDrive(0, 0, 0);
