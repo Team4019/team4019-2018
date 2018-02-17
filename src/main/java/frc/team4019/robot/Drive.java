@@ -16,7 +16,7 @@ public class Drive {
 	public void arcadeDrive(double forward, double rotation, double throttle) {
 		this.talonsLeft.set((forward + rotation) * throttle * Constants.drive.throttle);
 		this.talonsRight.set((forward - rotation) * throttle * Constants.drive.throttle);
-		SmartDashboard.putString(Constants.drive.dashboard, "DRIVE: ARCADE;" + Math.round(throttle * 100) + "%");
+		SmartDashboard.putString(Constants.drive.dashboard, "DRIVE: ARCADE; " + Math.round(throttle * 100) + "%");
 	}
 
 	public void arcadeDrive(double forward, double rotation) {
