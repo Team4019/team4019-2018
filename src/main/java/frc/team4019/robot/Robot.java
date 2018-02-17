@@ -7,6 +7,7 @@ public class Robot extends IterativeRobot {
 
 	Joystick stickDrive = new Joystick(Constants.sticks.leftStick);
 	Drive drive = new Drive();
+	Climber climber = new Climber();
 
     @Override
     public void robotInit() { }
@@ -32,7 +33,13 @@ public class Robot extends IterativeRobot {
 
     @Override
     public void teleopPeriodic() {
-    	this.drive.arcadeDrive(-stickDrive.getY(), stickDrive.getX(), stickDrive.getThrottle() / -2 + 1);
+    	if (!stickDrive.getRawButton(1)) {
+		    this.drive.arcadeDrive(-stickDrive.getY(), stickDrive.getX(), stickDrive.getThrottle() / -2 + 1);
+		    this.climber.climb(0);
+	    } else {
+    		this.drive.arcadeDrive(0, 0, 0);
+    		this.climber.climb(-stickDrive.getY());
+	    }
     }
 
     @Override
