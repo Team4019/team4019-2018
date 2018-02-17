@@ -1,8 +1,13 @@
 package frc.team4019.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
 
 public class Robot extends IterativeRobot {
+
+	Joystick stickDrive = new Joystick(Constants.sticks.leftStick);
+	Drive drive = new Drive();
+
     @Override
     public void robotInit() { }
 
@@ -26,7 +31,9 @@ public class Robot extends IterativeRobot {
     public void autonomousPeriodic() { }
 
     @Override
-    public void teleopPeriodic() { }
+    public void teleopPeriodic() {
+    	this.drive.arcadeDrive(-stickDrive.getY(), stickDrive.getX(), stickDrive.getThrottle() / -2 + 1);
+    }
 
     @Override
     public void testPeriodic() { }
