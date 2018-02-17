@@ -18,7 +18,7 @@ public class TalonGroup {
 
 	public void set(double value) {
 		for (TalonSRX talon : this.talons) {
-			talon.set(ControlMode.Current, value * this.throttle);
+			talon.set(ControlMode.PercentOutput, value * this.throttle);
 		}
 	}
 
