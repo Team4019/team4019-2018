@@ -17,10 +17,23 @@ public class Teleoperated {
 		} else {
 			Robot.climber.climb(0);
 		}
+		if (Robot.stickDrive.getRawButton(Constants.gyro.control.buttonReset)) {
+			Robot.gyro.reset();
+		}
+		if (Robot.stickDrive.getRawButton(Constants.gyro.control.buttonAlign)) {
+			rotation = Robot.gyro.getAlignment(Robot.stickDrive.getPOV());
+		}
 
 		// Operator stick
 		Robot.grabber.grab((Robot.stickOperate.getPOV() + 90) / 90);
 		Robot.elevator.lift(-Robot.stickOperate.getRawAxis(Constants.elevator.control.axisSpeed));
+		if (Robot.stickOperate.getRawButton(Constants.gyro.control.buttonReset)) {
+			Robot.gyro.reset();
+		}
+		if (Robot.stickOperate.getRawButton(Constants.gyro.control.buttonAlign)) {
+			double theta = Math.atan2(Robot.stickOperate.getRawAxis(Constants.gyro.control.axisSin), Robot.stickOperate.getRawAxis(Constants.gyro.control.axisCos));
+			rotation = Robot.gyro.getAlignment(theta);
+		}
 
 		// Execute driving
 		Robot.drive.arcadeDrive(forward, rotation, throttle);

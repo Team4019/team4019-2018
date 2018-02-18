@@ -77,4 +77,13 @@ public class Constants {
 		static final double throttle = 1;
 		static final String dashboard = "DB/String 3";
 	}
+
+	static abstract class gyro {
+		static abstract class control {
+			static final int buttonAlign = 1;
+			static final int buttonReset = 2;
+			static final int axisSin = 1;
+			static final int axisCos = 0;
+		}
+	}
 }
