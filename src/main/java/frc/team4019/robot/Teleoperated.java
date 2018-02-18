@@ -7,12 +7,13 @@ public class Teleoperated {
 
 	public static void periodic() {
 		// Driver stick
-		if (!Robot.stickDrive.getRawButton(1)) {
-			Robot.drive.arcadeDrive(-Robot.stickDrive.getY(), Robot.stickDrive.getX(), Robot.stickDrive.getThrottle() / -2 + 0.5);
-			Robot.climber.climb(0);
+		Robot.drive.arcadeDrive(-Robot.stickDrive.getY(), Robot.stickDrive.getX(), Robot.stickDrive.getThrottle() / -2 + 0.5);
+		if (Robot.stickDrive.getRawButton(Constants.climber.control.buttonUp)) {
+			Robot.climber.climb(Robot.stickDrive.getRawAxis(Constants.climber.control.axisThrottle) / -2 + 0.5);
+		} else if (Robot.stickDrive.getRawButton(Constants.climber.control.buttonDown)) {
+			Robot.climber.climb(-(Robot.stickDrive.getRawAxis(Constants.climber.control.axisThrottle) / -2 + 0.5));
 		} else {
-			Robot.drive.arcadeDrive(0, 0, 0);
-			Robot.climber.climb(-Robot.stickDrive.getY());
+			Robot.climber.climb(0);
 		}
 
 		// Operator stick
