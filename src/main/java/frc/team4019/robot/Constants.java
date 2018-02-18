@@ -71,6 +71,9 @@ public class Constants {
 			static final boolean invert = false;
 			static final double throttle = 1;
 		}
+		static abstract  class control {
+			static final int axisSpeed = 1;
+		}
 		static final double throttle = 1;
 		static final String dashboard = "DB/String 3";
 	}

@@ -20,7 +20,7 @@ public class Teleoperated {
 
 		// Operator stick
 		Robot.grabber.grab((Robot.stickOperate.getPOV() + 90) / 90);
-		Robot.elevator.lift(-Robot.stickOperate.getY());
+		Robot.elevator.lift(-Robot.stickOperate.getRawAxis(Constants.elevator.control.axisSpeed));
 
 		// Execute driving
 		Robot.drive.arcadeDrive(forward, rotation, throttle);
