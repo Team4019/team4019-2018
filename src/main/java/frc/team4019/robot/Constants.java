@@ -54,4 +54,14 @@ public class Constants {
 		static final double throttle = 0.1;
 		static final String dashboard = "DB/String 2";
 	}
+
+	static abstract class elevator {
+		static abstract class right {
+			static final int[] talonID = {6};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static final double throttle = 1;
+		static final String dashboard = "DB/String 3";
+	}
 }
