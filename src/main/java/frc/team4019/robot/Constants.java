@@ -4,7 +4,7 @@ public class Constants {
 	// IDs of the Joysticks on the Driver station
 	static abstract class sticks {
 		static final int leftStick = 0;
-		static final int rightStick = 0;
+		static final int rightStick = 1;
 	}
 
 	// Drive configuration
@@ -37,5 +37,21 @@ public class Constants {
 		}
 		static final double throttle = 1;
 		static final String dashboard = "DB/String 1";
+	}
+
+	// Climber configuration
+	static abstract class grabber {
+		static abstract class left {
+			static final int[] talonID = {8};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static abstract class right {
+			static final int[] talonID = {9};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static final double throttle = 0.1;
+		static final String dashboard = "DB/String 2";
 	}
 }
