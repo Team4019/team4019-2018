@@ -13,6 +13,7 @@ public class Robot extends IterativeRobot {
 	static Drive drive = new Drive();
 	static Climber climber = new Climber();
 	static Grabber grabber = new Grabber();
+	static Elevator elevator = new Elevator();
 
     @Override
     public void robotInit() {
