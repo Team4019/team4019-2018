@@ -35,6 +35,11 @@ public class Constants {
 			static final boolean invert = false;
 			static final double throttle = 1;
 		}
+		static abstract class control {
+			static final int buttonUp = 5;
+			static final int buttonDown = 3;
+			static final int axisThrottle = 3;
+		}
 		static final double throttle = 1;
 		static final String dashboard = "DB/String 1";
 	}
@@ -53,5 +58,15 @@ public class Constants {
 		}
 		static final double throttle = 0.1;
 		static final String dashboard = "DB/String 2";
+	}
+
+	static abstract class elevator {
+		static abstract class right {
+			static final int[] talonID = {6};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static final double throttle = 1;
+		static final String dashboard = "DB/String 3";
 	}
 }
