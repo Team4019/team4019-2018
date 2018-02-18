@@ -7,9 +7,9 @@ public class Teleoperated {
 
 	public static void periodic() {
 		// Driver stick
-		double forward = -Robot.stickDrive.getY();
-		double rotation = Robot.stickDrive.getX();
-		double throttle = Robot.stickDrive.getThrottle() / -2 + 0.5;
+		double forward = -Robot.stickDrive.getRawAxis(Constants.drive.control.axisForward);
+		double rotation = Robot.stickDrive.getRawAxis(Constants.drive.control.axisRotation);
+		double throttle = Robot.stickDrive.getRawAxis(Constants.drive.control.axisThrottle) / -2 + 0.5;
 		if (Robot.stickDrive.getRawButton(Constants.climber.control.buttonUp)) {
 			Robot.climber.climb(Robot.stickDrive.getRawAxis(Constants.climber.control.axisThrottle) / -2 + 0.5);
 		} else if (Robot.stickDrive.getRawButton(Constants.climber.control.buttonDown)) {
