@@ -10,12 +10,12 @@ public class Constants {
 	// Drive configuration
 	static abstract class drive {
 		static abstract class left {
-			static final int[] driveID = {0, 1};
+			static final int[] talonID = {0, 1};
 			static final boolean invert = false;
 			static final double throttle = 1;
 		}
 		static abstract class right {
-			static final int[] driveID = {2, 3};
+			static final int[] talonID = {2, 3};
 			static final boolean invert = true;
 			static final double throttle = 1;
 		}

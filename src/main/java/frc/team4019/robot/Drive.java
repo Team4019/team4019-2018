@@ -7,8 +7,8 @@ public class Drive {
 	TalonGroup talonsRight;
 
 	public Drive() {
-		this.talonsLeft = new TalonGroup(Constants.drive.left.throttle, Constants.drive.left.driveID);
-		this.talonsRight = new TalonGroup(Constants.drive.right.throttle, Constants.drive.right.driveID);
+		this.talonsLeft = new TalonGroup(Constants.drive.left.throttle, Constants.drive.left.talonID);
+		this.talonsRight = new TalonGroup(Constants.drive.right.throttle, Constants.drive.right.talonID);
 		this.talonsLeft.setInverted(Constants.drive.left.invert);
 		this.talonsRight.setInverted(Constants.drive.right.invert);
 	}
