@@ -13,5 +13,6 @@ public class Teleoperated {
 			Robot.drive.arcadeDrive(0, 0, 0);
 			Robot.climber.climb(-Robot.stickDrive.getY());
 		}
+		Robot.grabber.grab((Robot.stickOperate.getPOV() + 90) / 90);
 	}
 }
