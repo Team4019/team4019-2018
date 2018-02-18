@@ -38,7 +38,7 @@ public class Constants {
 		static abstract class control {
 			static final int buttonUp = 5;
 			static final int buttonDown = 3;
-			static final int axisThrottle = 2;
+			static final int axisThrottle = 3;
 		}
 		static final double throttle = 1;
 		static final String dashboard = "DB/String 1";
