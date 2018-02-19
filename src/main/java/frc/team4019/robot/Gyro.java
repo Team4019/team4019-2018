@@ -20,7 +20,7 @@ public class Gyro {
 	}
 
 	public double getAngle() {
-		double current = this.getAngle();
+		double current = this.gyro.getAngle();
 		return (Math.signum(current) == -1) ? 360 + current : current;
 	}
 
