@@ -31,6 +31,13 @@ public class Teleoperated {
 		// Operator stick
 		Robot.grabber.grab((Robot.stickOperate.getPOV() + 90) / 90);
 		Robot.elevator.lift(-Robot.stickOperate.getRawAxis(Constants.elevator.control.axisSpeed));
+		if (Robot.stickOperate.getRawButton(Constants.grabber.control.buttonUp)) {
+			Robot.grabber.arm(1);
+		} else if (Robot.stickOperate.getRawButton(Constants.grabber.control.buttonDown)) {
+			Robot.grabber.arm(-1);
+		} else {
+			Robot.grabber.arm(0);
+		}
 		if (Robot.stickOperate.getRawButton(Constants.gyro.control.buttonReset)) {
 			Robot.gyro.reset();
 		}
