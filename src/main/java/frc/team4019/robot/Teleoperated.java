@@ -1,5 +1,7 @@
 package frc.team4019.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class Teleoperated {
 	public static void init() {
 
@@ -22,6 +24,8 @@ public class Teleoperated {
 		}
 		if (Robot.stickDrive.getRawButton(Constants.gyro.control.buttonAlign)) {
 			rotation = Robot.gyro.getAlignment(Robot.stickDrive.getPOV());
+			SmartDashboard.putString("DB/String 4", String.valueOf(rotation));
+
 		}
 
 		// Operator stick
@@ -31,7 +35,8 @@ public class Teleoperated {
 			Robot.gyro.reset();
 		}
 		if (Robot.stickOperate.getRawButton(Constants.gyro.control.buttonAlign)) {
-			double theta = Math.atan2(Robot.stickOperate.getRawAxis(Constants.gyro.control.axisSin), Robot.stickOperate.getRawAxis(Constants.gyro.control.axisCos));
+			double theta = Math.toDegrees(Math.atan2(Robot.stickOperate.getRawAxis(Constants.gyro.control.axisCos), -Robot.stickOperate.getRawAxis(Constants.gyro.control.axisSin)));
+			SmartDashboard.putString("DB/String 4", String.valueOf(theta));
 			rotation = Robot.gyro.getAlignment(theta);
 		}
 
