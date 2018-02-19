@@ -61,6 +61,15 @@ public class Constants {
 			static final boolean invert = false;
 			static final double throttle = 1;
 		}
+		static abstract class arm {
+			static final int[] talonID = {4};
+			static final boolean invert = false;
+			static final double throttle = 1;
+		}
+		static abstract class control {
+			static final int buttonUp = 5;
+			static final int buttonDown = 3;
+		}
 		static final double throttle = 0.25;
 		static final String dashboard = "DB/String 2";
 	}
