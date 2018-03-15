@@ -94,5 +94,6 @@ public class Constants {
 			static final int axisSin = 1;
 			static final int axisCos = 0;
 		}
+		static final String dashboard = "DB/String 4";
 	}
 }
