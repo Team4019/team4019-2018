@@ -54,23 +54,23 @@ public class Constants {
 		static abstract class left {
 			static final int[] talonID = {8};
 			static final boolean invert = false;
-			static final double throttle = 1;
+			static final double throttle = 0.5;
 		}
 		static abstract class right {
 			static final int[] talonID = {9};
 			static final boolean invert = false;
-			static final double throttle = 1;
+			static final double throttle = 0.5;
 		}
 		static abstract class arm {
 			static final int[] talonID = {4};
 			static final boolean invert = false;
-			static final double throttle = 1;
+			static final double throttle = 0.375;
 		}
 		static abstract class control {
 			static final int buttonUp = 5;
 			static final int buttonDown = 3;
 		}
-		static final double throttle = 0.25;
+		static final double throttle = 0.5;
 		static final String dashboard = "DB/String 2";
 	}
 
