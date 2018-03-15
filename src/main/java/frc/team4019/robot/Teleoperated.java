@@ -49,6 +49,8 @@ public class Teleoperated {
 			Robot.elevator.lift(-Robot.stickOperate.getRawAxis(Constants.elevator.control.axisSpeed));
 		}
 
+		SmartDashboard.putString(Constants.gyro.dashboard, "GYRO: " + Robot.gyro.getAngle());
+
 		// Execute driving
 		Robot.drive.arcadeDrive(forward, rotation, throttle);
 	}
