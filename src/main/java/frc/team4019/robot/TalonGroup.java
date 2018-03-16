@@ -6,13 +6,27 @@ import java.util.ArrayList;
 
 public class TalonGroup {
 	ArrayList<TalonSRX> talons;
+	TalonSRX encoder;
 	double throttle;
 
 	TalonGroup(double throttle, int... args) {
 		this.throttle = throttle;
 		this.talons = new ArrayList<>();
 		for (int arg : args) {
+			TalonSRX talon = new TalonSRX(arg);
 			talons.add(new TalonSRX(arg));
+		}
+	}
+
+	TalonGroup(double throttle, int encoderID, int... args) {
+		this.throttle = throttle;
+		this.talons = new ArrayList<>();
+		for (int arg : args) {
+			TalonSRX talon = new TalonSRX(arg);
+			talons.add(new TalonSRX(arg));
+			if (arg == encoderID) {
+				encoder = talon;
+			}
 		}
 	}
 
@@ -26,5 +40,9 @@ public class TalonGroup {
 		for (TalonSRX talon : this.talons) {
 			talon.setInverted(value);
 		}
+	}
+
+	public int getPosition() {
+		return this.encoder.getSensorCollection().getPulseWidthPosition();
 	}
 }
