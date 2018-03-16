@@ -96,4 +96,8 @@ public class Constants {
 		}
 		static final String dashboard = "DB/String 4";
 	}
+
+	static abstract class autonomous {
+
+	}
 }

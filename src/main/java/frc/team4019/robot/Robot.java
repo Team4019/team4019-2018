@@ -1,5 +1,6 @@
 package frc.team4019.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 
@@ -14,10 +15,15 @@ public class Robot extends IterativeRobot {
 	static Gyro gyro = new Gyro();
 
     @Override
-    public void robotInit() { }
+    public void robotInit() {
+	    CameraServer camera = CameraServer.getInstance();
+	    camera.startAutomaticCapture();
+    }
 
     @Override
-    public void autonomousInit() { }
+    public void autonomousInit() {
+    	Autonomous.init();
+    }
 
     @Override
     public void teleopInit() {
@@ -29,7 +35,9 @@ public class Robot extends IterativeRobot {
 
 
     @Override
-    public void autonomousPeriodic() { }
+    public void autonomousPeriodic() {
+    	Autonomous.periodic();;
+    }
 
     @Override
     public void teleopPeriodic() {
