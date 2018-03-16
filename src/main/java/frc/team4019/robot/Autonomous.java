@@ -71,6 +71,6 @@ public class Autonomous {
 	}
 
 	public static void periodic() {
-		Robot.drive.arcadeDrive(0.1, 0) ;
+		Robot.drive.arcadeDrive(0.15, 0);
 	}
 }
