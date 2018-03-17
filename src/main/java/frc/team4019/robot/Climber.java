@@ -7,7 +7,7 @@ public class Climber {
 	TalonGroup talonsRight;
 
 	public Climber() {
-		this.talonsLeft = new TalonGroup(Constants.climber.left.throttle, Constants.climber.left.talonID);
+		this.talonsLeft = new TalonGroup(Constants.climber.left.throttle, 7, Constants.climber.left.talonID);
 		this.talonsRight = new TalonGroup(Constants.climber.right.throttle, Constants.climber.right.talonID);
 		this.talonsLeft.setInverted(Constants.climber.left.invert);
 		this.talonsLeft.setInverted(Constants.climber.right.invert);
