@@ -25,7 +25,7 @@ public class TalonGroup {
 			TalonSRX talon = new TalonSRX(arg);
 			talons.add(new TalonSRX(arg));
 			if (arg == encoderID) {
-				encoder = talon;
+				this.encoder = talon;
 			}
 		}
 	}
